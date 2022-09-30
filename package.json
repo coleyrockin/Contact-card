@@ -1,27 +1,23 @@
 {
-  "name": "contact-card",
+  "name": "contact-cards",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "cd server && node server.js",
-    "server": "cd server nodemon server.js --ignore client",
+    "server": "cd server node server.js --ignore client",
     "build": "cd client && npm run build",
-    "client": "cd client && npm start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/coleyrockin/Contact-card.git"
+    "install": "concurrently \"cd client && npm install\" \"cd server && npm install\" ",
+    "client": "cd client && npm start",
+    "heroku-prebuild": "npm install --dev"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/coleyrockin/Contact-card/issues"
-  },
-  "homepage": "https://github.com/coleyrockin/Contact-card#readme",
   "dependencies": {
-    "concurrently": "^7.4.0"
+    "concurrently": "^7.0.0"
+  },
+  "engines": {
+    "node": "17.x"
   }
 }
