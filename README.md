@@ -4,7 +4,7 @@ MVP of a Contact Cards app and turn it into a Progressive Web Application (PWA).
 
 ## Description
 
-In order to build this, you will adapt an existing application built with HTML, CSS, and JavaScript to be a Progressive Web Application. You will start by adapting the existing code to the client-server model. Then, you will add webpack, an asset bundler, to improve your app's speed and performance. Once your app is performant and optimized, you will use IndexedDB, a low-level web API that allows storing large amounts of data right in the browser, to practice your CRUD skills and build an interactive card feature. Finally, you will add two key features of PWAs—a service worker to enable offline functionality and a manifest.json file—to give your users a fast, network-independent experience that works on any device.
+An existing contact card application built with HTML, CSS, and JavaScript to be a Progressive Web Application.
 
 ## Deployed Heroku Link
 [Link to Heroku](https://dry-beyond-26861.herokuapp.com/)

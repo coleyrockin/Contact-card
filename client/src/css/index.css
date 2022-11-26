@@ -1,3 +1,7 @@
 @import "./card.css";
 @import "./form.css";
 @import "./header.css";
+
+body {
+  background: rgb(116, 114, 114)
+}
