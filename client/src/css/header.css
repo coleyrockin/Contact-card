@@ -1,3 +1,8 @@
 #navbar-header {
   color: white;
 }
+
+#new-contact {
+  height: 48px;
+  white-space: nowrap;
+}

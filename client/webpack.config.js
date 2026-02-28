@@ -6,10 +6,14 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  devServer: {
+    port: 8080,
+    open: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
-      title: 'Webpack Plugin',
+      title: 'Contact Cards',
     })
   ],
   module: {
