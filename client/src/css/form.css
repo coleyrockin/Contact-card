@@ -1,6 +1,10 @@
 #formToggle {
-  margin: 36px auto;
+  margin: var(--space-lg) auto;
   width: 60vw;
+  display: block;
+}
+
+#formToggle.form--hidden {
   display: none;
 }
 
@@ -11,9 +15,10 @@
 #radio-select {
   border-radius: 25px;
   border: 2px solid gray;
-  margin: 20px;
+  margin: var(--space-md);
+  padding: var(--space-sm);
 }
 
 .form-check {
-  margin: 20px;
+  margin: var(--space-md);
 }

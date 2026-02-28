@@ -2,6 +2,17 @@
 @import "./form.css";
 @import "./header.css";
 
+:root {
+  --color-bg: rgb(116, 114, 114);
+  --card-width: 300px;
+  --card-avatar-size: 80px;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --border-radius-card: 0.5rem;
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 body {
-  background: rgb(116, 114, 114)
+  background: var(--color-bg);
 }
