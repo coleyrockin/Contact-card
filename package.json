@@ -1,0 +1,24 @@
+{
+  "name": "contact-card-pwa",
+  "version": "2.0.0",
+  "description": "A portfolio-ready local-first contact card manager built as a static PWA.",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "npm run build"
+  },
+  "keywords": [
+    "contacts",
+    "pwa",
+    "vite",
+    "local-first"
+  ],
+  "author": "Boyd Roberts",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^8.0.11"
+  }
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A local-first contact card manager for creating, editing, and exporting personal contact cards."
+    />
+    <meta name="theme-color" content="#24453f" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="apple-touch-icon" href="/images/icon-192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>Contact Card PWA</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#contact-form">Skip to contact form</a>
+
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <img src="/images/logo.png" alt="" class="brand__mark" width="48" height="48" />
+          <div>
+            <p class="eyebrow">Local-first PWA</p>
+            <h1>Contact Cards</h1>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="button button--ghost" id="import-button" type="button">
+            Import .vcf
+          </button>
+          <input
+            class="visually-hidden"
+            id="import-input"
+            type="file"
+            accept=".vcf,text/vcard"
+            multiple
+          />
+          <button class="button button--primary" id="new-contact-button" type="button">
+            New contact
+          </button>
+        </div>
+      </header>
+
+      <main class="app-layout">
+        <section class="workspace" aria-labelledby="contacts-heading">
+          <div class="toolbar">
+            <div>
+              <p class="eyebrow">Directory</p>
+              <h2 id="contacts-heading">Saved contacts</h2>
+              <p class="summary" id="contact-summary">Loading contacts...</p>
+            </div>
+
+            <div class="toolbar__controls">
+              <label class="search-field" for="search-input">
+                <span>Search</span>
+                <input id="search-input" type="search" autocomplete="off" placeholder="Name, email, or phone" />
+              </label>
+
+              <label class="sort-field" for="sort-select">
+                <span>Sort</span>
+                <select id="sort-select">
+                  <option value="name">Name A&ndash;Z</option>
+                  <option value="newest">Newest first</option>
+                  <option value="oldest">Oldest first</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="empty-state" id="empty-state" hidden>
+            <h3>No contacts yet</h3>
+            <p>Add your first card to build a lightweight local directory.</p>
+            <button class="button button--secondary" id="empty-new-contact-button" type="button">
+              Add contact
+            </button>
+          </div>
+
+          <div class="contact-grid" id="contact-list" aria-live="polite"></div>
+        </section>
+
+        <aside class="form-panel" aria-labelledby="form-heading">
+          <div class="form-panel__header">
+            <p class="eyebrow">Editor</p>
+            <h2 id="form-heading">Add a contact</h2>
+            <p class="form-hint">Contacts are stored only in this browser.</p>
+          </div>
+
+          <form id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+              <p class="field-error" id="name-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="title">Role or note</label>
+              <input id="title" name="title" type="text" autocomplete="organization-title" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <p class="field-error" id="email-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              <p class="field-error" id="phone-error"></p>
+            </div>
+
+            <fieldset class="avatar-picker">
+              <legend>Profile image</legend>
+              <div class="avatar-options" id="avatar-options"></div>
+            </fieldset>
+
+            <div class="field">
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes" rows="4" maxlength="180"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button--primary" id="submit-button" type="submit" disabled>
+                Save contact
+              </button>
+              <button class="button button--ghost" id="cancel-edit-button" type="button" hidden>
+                Cancel
+              </button>
+            </div>
+
+            <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
